@@ -9,5 +9,5 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/', Router)
 
-const PORT = process.env.MY_PORT
+const PORT = process.env.PORT
 app.listen(PORT, console.log(`Server running on port: http://localhost:${PORT}`.bold.blue))

@@ -30,19 +30,15 @@ exports.getUser = (req, res) => {
     if (user) {
         return res.status(200).json(user)
     } else {
-        return res.status(400).json('not found user with the given id!')
+        return res.status(400).json('User not found')
     }
 }
 
-// Delete user
 exports.deleteUser = (req, res) => {
     const { id } = req.params
     users = users.filter((user) => user.id != id)
-    return res.json('Delete user successfully!')
+    return res.json('User deleted')
 }
-
-
-//Create user (POST)
 
 exports.createUser = (req, res) => {
     const { username, email } = req.body
@@ -52,7 +48,7 @@ exports.createUser = (req, res) => {
         email
     }
     users.push(newUser)
-    return res.json('User added successfully!')
+    return res.json('User added !')
 }
 
 exports.updateUser = (req, res) => {
@@ -62,8 +58,8 @@ exports.updateUser = (req, res) => {
     if (user) {
         user.username = username
         user.email = email
-        return res.json('User updated successfully!')
+        return res.json('User updated !')
     } else {
-        return res.json('User not found with the given id!')
+        return res.json('User not found!')
     }
 }

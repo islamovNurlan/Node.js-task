@@ -37,7 +37,7 @@ exports.getUser = (req, res) => {
 exports.deleteUser = (req, res) => {
     const { id } = req.params
     users = users.filter((user) => user.id != id)
-    return res.json('User deleted')
+    return res.json('User deleted !')
 }
 
 exports.createUser = (req, res) => {
